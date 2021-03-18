@@ -24,7 +24,7 @@ def main():
 
                 # 2. 커서를 가져온다
                 cursor = connection.cursor()
-                print('커서 가져옴')
+                # print('커서 가져옴')
 
                 # 3. 우리가 원하는거 실행 가능
                 query = '''insert into cats4 (name, age)
