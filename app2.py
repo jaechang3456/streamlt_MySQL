@@ -11,9 +11,9 @@ def main():
     time = st.time_input('태어난 시간을 입력하세요.')
     date_time = datetime.combine(date, time)
  
-    print(date)
-    print(time)
-    print(date_time)
+    # print(date)
+    # print(time)
+    # print(date_time)
 
     if st.button('저장'):
 
