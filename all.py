@@ -28,7 +28,7 @@ def main():
     elif choice == 'Update' :
         run_update()
     elif choice == 'Delete' :
-        run_delete()
+        run_delete()        
 
 if __name__ == '__main__':
     main()
