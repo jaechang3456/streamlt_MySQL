@@ -116,48 +116,48 @@ from mysql.connector import Error
 # if __name__ == '__main__' :
 #     main()
 
-# def main():
+def main():
 
-#     if st.button('저장'):
+    if st.button('저장'):
 
-#         try :
-#             connection = mysql.connector.connect(
-#                 host = 'database-1.cdxb0pb9vr70.us-east-2.rds.amazonaws.com',
-#                 database = 'yhdb',
-#                 user = 'streamlit',
-#                 password = '1q2w3e4r5t'
-#             )
+        try :
+            connection = mysql.connector.connect(
+                host = 'database-1.cdxb0pb9vr70.us-east-2.rds.amazonaws.com',
+                database = 'yhdb',
+                user = 'streamlit',
+                password = '1q2w3e4r5t'
+            )
 
-#             if connection.is_connected() :
-#                 print('연결됨')
-#                 db_info = connection.get_server_info()
-#                 print("MySQL sercer version : ", db_info)
+            if connection.is_connected() :
+                print('연결됨')
+                db_info = connection.get_server_info()
+                print("MySQL sercer version : ", db_info)
 
-#                 cursor = connection.cursor()
+                cursor = connection.cursor()
 
-#                 query = '''insert into cats4 (name, age)
-#                         values (%s, %s);'''
+                query = '''insert into cats4 (name, age)
+                        values (%s, %s);'''
 
-#                 record = [('냐옹이',1), ('나비', 3),('단비',5)]
+                record = [('냐옹이',1), ('나비', 3),('단비',5)]
                 
-#                 cursor.executemany(query, record)
-#                 connection.commit()
+                cursor.executemany(query, record)
+                connection.commit()
 
-#                 print('{}개 적용됨'.format(cursor.rowcount))
+                print('{}개 적용됨'.format(cursor.rowcount))
 
-#                 # record = cursor.fetchone()
-#                 # print('Connected to db : ', record)
+                # record = cursor.fetchone()
+                # print('Connected to db : ', record)
 
-#         except Error as e :
-#             print('디비 관련 에러 발생' , e)
+        except Error as e :
+            print('디비 관련 에러 발생' , e)
 
-#         finally :
+        finally :
             
-#             cursor.close()
-#             connection.close()
-#             print('MySQL 커넥션 종료')
+            cursor.close()
+            connection.close()
+            print('MySQL 커넥션 종료')
 
 
-# if __name__ == '__main__' :
-#     main()
+if __name__ == '__main__' :
+    main()
 
